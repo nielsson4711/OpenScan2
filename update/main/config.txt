@@ -5,7 +5,8 @@
 
 # uncomment if you get no picture on HDMI for a default "safe" mode
 #hdmi_safe=1
-hdmi_blanking=2
+# the doc page has a remark pointing to some strange HDMI behaviour, at least in 2022. We won't use it without need.
+#hdmi_blanking=2
 
 # uncomment the following to adjust overscan. Use positive numbers if console
 # goes off screen, and negative if there is too much border
@@ -78,8 +79,11 @@ otg_mode=1
 arm_boost=1
 
 [all]
-
-camera_auto_detect=0
 gpu_mem=256
-dtoverlay=vc4-fkms-v3d
-dtoverlay=imx519,media-controller=1
+
+# todo: disable camera_auto_detact above (by setting it to 0)
+# todo: enable vc4-fkms-v3d dtoverlay above
+
+
+# imx519 is no longer required as the current kernel supports a wide range of arducams
+# dtoverlay=imx519,media-controller=1
